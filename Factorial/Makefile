@@ -8,9 +8,12 @@ INC = -Iunity\
 -Itest
 
 PROJECT_NAME = FACTORIAL.out
+BUILD = build
 
 $(PROJECT_NAME): $(SRC)
 	gcc $(SRC) $(INC) -o $(PROJECT_NAME)
+all: $(SRC) $(BUILD)
+gcc $(SRC) $(INC) -o $(PROJECT_NAME)
 
 run:$(PROJECT_NAME)
 	./${PROJECT_NAME}
@@ -19,3 +22,5 @@ doc:
 
 clean:
 	rm -rf $(PROJECT_NAME) documentation/html
+$(BUILD):
+	mkdir build
